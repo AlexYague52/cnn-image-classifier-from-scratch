@@ -15,14 +15,14 @@ def Testing(network, x_test, y_test, verbose = True):
 
     if verbose:
 
-        print("\nPrimeros 5 pokemon del test:")
-        pkmn_idx = [i for i in range(len(y_test)) if y_test[i].item() == 0][:5]
-        for i in pkmn_idx:
+        print("\n First 5 data from dataset1:")
+        data1_idx = [i for i in range(len(y_test)) if y_test[i].item() == 0][:5]
+        for i in data1_idx:
             pred = predict(network, x_test[i]).item()
-            print(f"  pred={pred:.4f}  label=pokemon  {'Good' if pred < 0.5 else 'Bad'}")
+            print(f"  pred={pred:.4f}  label1  {'Good' if pred < 0.5 else 'Bad'}")
 
-        print("\nPrimeros 5 digimon del test:")
-        dgmn_idx = [i for i in range(len(y_test)) if y_test[i].item() == 1][:5]
-        for i in dgmn_idx:
+        print("\nFirst 5 data from dataset2:")
+        data2_idx = [i for i in range(len(y_test)) if y_test[i].item() == 1][:5]
+        for i in data2_idx:
             pred = predict(network, x_test[i]).item()
-            print(f"  pred={pred:.4f}  label=digimon  {'Good' if pred > 0.5 else 'Bad'}")
+            print(f"  pred={pred:.4f}  label2  {'Good' if pred > 0.5 else 'Bad'}")

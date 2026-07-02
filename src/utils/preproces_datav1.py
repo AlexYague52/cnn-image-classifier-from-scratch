@@ -97,7 +97,7 @@ def shuffle_and_split(folder, size, train_ratio,
 
     if load_split and split_path and Path(split_path).exists():
         idx = np.load(split_path)
-        print(f"  Split loaded from {split_path}")
+        print(f"Split loaded from {split_path}")
     else:
         idx = np.random.permutation(len(base))
         if split_path:

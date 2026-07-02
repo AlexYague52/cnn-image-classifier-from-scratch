@@ -17,14 +17,14 @@ from utils.testing import Testing
 CAT_FOLDER = Path(r'C:\Users\Usuario\Documents\AI\neural_network\cnn\src\catdog_dataset\cat')
 DOG_FOLDER = Path(r'C:\Users\Usuario\Documents\AI\neural_network\cnn\src\catdog_dataset\dog')
 
-SIZE = 16
+SIZE = 32
 TRAIN_RATIO = 0.8
 
 x_train, y_train, x_test, y_test = dataset(
     CAT_FOLDER, DOG_FOLDER, SIZE, TRAIN_RATIO,
-    split_path_x1="cats_split.npy",
-    split_path_x2="dogs_split.npy",
-    undersample_path="undersample.npy",
+    split_path_x1=r"C:\Users\Usuario\Documents\AI\neural_network\cnn\src\training_data\cats_split.npy",
+    split_path_x2=r"C:\Users\Usuario\Documents\AI\neural_network\cnn\src\training_data\dogs_split.npy",
+    undersample_path=r"C:\Users\Usuario\Documents\AI\neural_network\cnn\src\training_data\undersample.npy",
     load_split=True,
     flags=True
 )
@@ -42,11 +42,11 @@ encoder = [
     conv1, LeakyReLU(), MaxPooling(2, 2),
     conv2, LeakyReLU(), MaxPooling(2, 2),
     Flatten(shape2),
-    Dense(int(np.prod(shape2)), 32), LeakyReLU(),
-    Dense(32, 1), Sigmoid()
+    Dense(int(np.prod(shape2)), 64), LeakyReLU(),
+    Dense(64, 1), Sigmoid()
 ]
 
-history = load_model(encoder, path=r"C:\Users\Usuario\Documents\AI\neural_network\cnn\src\utils\model2.npz")
+history = load_model(encoder, path=r"C:\Users\Usuario\Documents\AI\model.npz")
 
 loss = history['loss']
 acc = history['acc']
