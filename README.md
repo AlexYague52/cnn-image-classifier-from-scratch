@@ -58,7 +58,7 @@ Input (3, 32, 32)
 
 To understand what the model struggles with, I visualized random failures from the test set at their original resolution.
 
-![Misclassified samples](results/failures.png)
+![Misclassified samples](src/failures.png)
 
 Some patterns emerge from the misclassified images:
 
@@ -70,7 +70,7 @@ Some patterns emerge from the misclassified images:
 
 I tested the trained model with photos of my own pets: Choko (a black dog), Toby (a small brown dog), and Noe (a white-brown, surprisingly small cat). I also included some memes and edited images to explore the model's behavior on out-of-distribution data.
 
-![Pet predictions](results/results.png)
+![Pet predictions](src/results.png)
 
 Some observations:
 
