@@ -54,15 +54,23 @@ Input (3, 32, 32)
   → Dense (64 → 1)            → Sigmoid
   → Binary Cross-Entropy Loss
 ```
+### Misclassified samples
 
+To understand what the model struggles with, I visualized random failures from the test set at their original resolution.
+
+![Misclassified samples](results/failures.png)
+
+Some patterns emerge from the misclassified images:
+
+- **Dark-furred animals are problematic.** The model tends to classify dark or black cats as dogs and vice versa, suggesting it relies on color/brightness as a feature rather than shape (ears, snout, posture).
+- **Busy backgrounds confuse the model.** When the animal appears against cluttered environments (furniture, patterned carpets, other objects), the 32×32 downscaling mixes the animal with the background and the model cannot isolate the relevant features.
+- **Low confidence on failures.** Most misclassifications have prediction scores between 0.55 and 0.70, meaning the model is uncertain rather than confidently wrong. This suggests it has learned meaningful features but lacks the resolution to handle ambiguous cases.
 
 ## Testing on my own pets
 
 I tested the trained model with photos of my own pets: Choko (a black dog), Toby (a small brown dog), and Noe (a white-brown, surprisingly small cat). I also included some memes and edited images to explore the model's behavior on out-of-distribution data.
 
-<!-- Include your results image here:
-![Pet predictions](results/pets_predictions.png)
--->
+![Pet predictions](results/results.png)
 
 Some observations:
 
