@@ -46,7 +46,6 @@ encoder = [
     Dense(int(np.prod(shape2)), 64), LeakyReLU(),
     Dense(64, 1), Sigmoid()
 ]
-
 # TRANING AND SAVING
 
 print('Training!...')
@@ -57,8 +56,8 @@ result = train(
     binary_cross_entropy_prime,
     x_train,
     y_train,
-    epochs=200,
-    learning_rate=0.004,
+    epochs=50,
+    learning_rate=0.003,
     verbose=True, save_params=True, save_learning=True)
 
 # TESTING

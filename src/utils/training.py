@@ -57,7 +57,7 @@ def train(network, loss, loss_prime, x_train, y_train, epochs=1000, learning_rat
         if (e + 1) % 5 == 0:
             if save_params:
                 result['params'] = [layer.get_params() for layer in network]
-            save_model(network,result, path="model.npz", verbose = True)
+            save_model(network,result, path="modelpd.npz", verbose = True)
            
     
     
