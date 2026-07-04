@@ -70,7 +70,8 @@ Some patterns emerge from the misclassified images:
 
 I tested the trained model with photos of my own pets: Choko (a black dog), Toby (a small brown dog), and Noe (a white-brown, surprisingly small cat). I also included some memes and edited images to explore the model's behavior on out-of-distribution data.
 
-![Pet predictions](src/results.png)
+![Training curves](src/results/accuracy.png)
+![Training curves](src/results/results.png)
 
 Some observations:
 
