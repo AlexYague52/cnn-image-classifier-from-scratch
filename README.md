@@ -58,7 +58,7 @@ Input (3, 32, 32)
 
 To understand what the model struggles with, I visualized random failures from the test set at their original resolution.
 
-![Misclassified samples](src/failures.png)
+![Misclassified samples](src/results/failures.png)
 
 Some patterns emerge from the misclassified images:
 
