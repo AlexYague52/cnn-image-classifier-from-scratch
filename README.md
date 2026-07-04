@@ -54,6 +54,17 @@ Input (3, 32, 32)
   → Dense (64 → 1)            → Sigmoid
   → Binary Cross-Entropy Loss
 ```
+### Results
+
+At first I ran into a lot of overfitting: every epoch processed the entire image set (200 epochs total), and the model ended up overfitted. Final training accuracy was around 90%, while test accuracy stalled at about 60%. In other words, the network was memorizing the training images instead of learning generalizable patterns, which showed up as poor test performance.
+
+To fix this I made two changes. First, I moved from 16×16 to 32×32 images and added a second convolutional layer. Second, I now sample a random subset of the training set at each epoch, to prevent the network from memorizing and push it toward actual learning. Testing different epoch counts together with early stopping, I found that the network converges at around ~50 epochs, with an accuracy of roughly 70%.
+
+![Accuracy](src/results/accuracy.png)
+
+```
+Test accuracy: 1137/1602 = 0.710
+```
 ### Misclassified samples
 
 To understand what the model struggles with, I visualized random failures from the test set at their original resolution.
@@ -70,7 +81,6 @@ Some patterns emerge from the misclassified images:
 
 I tested the trained model with photos of my own pets: Choko (a black dog), Toby (a small brown dog), and Noe (a white-brown, surprisingly small cat). I also included some memes and edited images to explore the model's behavior on out-of-distribution data.
 
-![Training curves](src/results/accuracy.png)
 ![Training curves](src/results/results.png)
 
 Some observations:
