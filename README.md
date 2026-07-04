@@ -58,7 +58,7 @@ Input (3, 32, 32)
 
 At first I ran into a lot of overfitting: every epoch processed the entire image set (200 epochs total), and the model ended up overfitted. Final training accuracy was around 90%, while test accuracy stalled at about 60%. In other words, the network was memorizing the training images instead of learning generalizable patterns, which showed up as poor test performance.
 
-To fix this I made two changes. First, I moved from 16×16 to 32×32 images and added a second convolutional layer to capture more features from the image. Second, I now sample a random subset of the training set at each epoch, to prevent the network from memorizing and push it toward actual learning. Testing different epoch counts together with early stopping, I found that the network converges at around ~50 epochs, with an accuracy of roughly 70%.
+To fix this I made two changes. First, I moved from 16×16 to 32×32 images and added a second convolutional layer to capture more features from the image. Second, I now sample a random subset of the training set at each epoch, to prevent the network from memorizing and push it toward actual learning. Testing different epoch counts together with early stopping, I found that the network converges at around ~50 epochs, with an accuracy of roughly 80%.
 
 ![Accuracy](src/results/accuracy.png)
 
