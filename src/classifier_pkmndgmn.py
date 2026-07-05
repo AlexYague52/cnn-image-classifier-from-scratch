@@ -13,17 +13,17 @@ from utils.testing import Testing
 
 # SET-UP DATASET
 
-PKMN_FOLDER = Path(r'C:\Users\Usuario\Documents\AI\neural_network\cnn\src\dataset\pokemon')
-DGMN_FOLDER = Path(r'C:\Users\Usuario\Documents\AI\neural_network\cnn\src\dataset\digimon')
+PKMN_FOLDER = Path(r'...\src\dataset\pokemon')
+DGMN_FOLDER = Path(r'...\src\dataset\digimon')
 
 SIZE = 32
 TRAIN_RATIO = 0.8
 
 x_train, y_train, x_test, y_test = dataset(
     PKMN_FOLDER, DGMN_FOLDER, SIZE, TRAIN_RATIO,
-    split_path_x1=r"C:\Users\Usuario\Documents\AI\neural_network\cnn\src\training_data\PKMN_split.npy",
-    split_path_x2=r"C:\Users\Usuario\Documents\AI\neural_network\cnn\src\training_data\GMN_split.npy",
-    undersample_path=r"C:\Users\Usuario\Documents\AI\neural_network\cnn\src\training_data\undersample_PD.npy",
+    split_path_x1=r"...\src\training_data\PKMN_split.npy",
+    split_path_x2=r"...\src\training_data\GMN_split.npy",
+    undersample_path=r"...\src\training_data\undersample_PD.npy",
     flags=True,
     Y_flip=True,
     bright=True,
