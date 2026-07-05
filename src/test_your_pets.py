@@ -15,7 +15,7 @@ from utils.testing import Testing, visualize_test, show_failures
 
 
 
-FOLDER = Path(r'C:\Users\Usuario\Documents\AI\neural_network\cnn\src\your_pets')
+FOLDER = Path(r'...\src\your_pets')
 
 # ARCHITECTURE
 
@@ -33,7 +33,7 @@ encoder = [
     Dense(64, 1), Sigmoid()
 ]
 
-history = load_model(encoder, path=r"C:\Users\Usuario\Documents\AI\model45.npz")
+history = load_model(encoder, path=r"...\model.npz")
 
 visualize_test(encoder, FOLDER,32)
 
