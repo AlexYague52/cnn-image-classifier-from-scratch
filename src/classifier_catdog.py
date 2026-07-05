@@ -13,17 +13,17 @@ from utils.testing import Testing
 
 # SET-UP DATASET
 
-CAT_FOLDER = Path(r'C:\Users\Usuario\Documents\AI\neural_network\cnn\src\catdog_dataset\cat')
-DOG_FOLDER = Path(r'C:\Users\Usuario\Documents\AI\neural_network\cnn\src\catdog_dataset\dog')
+CAT_FOLDER = Path(r'...\src\catdog_dataset\cat.npy')
+DOG_FOLDER = Path(r'...\src\catdog_dataset\dog.npy')
 
 SIZE = 32
 TRAIN_RATIO = 0.8
 
 x_train, y_train, x_test, y_test = dataset(
     CAT_FOLDER, DOG_FOLDER, SIZE, TRAIN_RATIO,
-    split_path_x1=r"C:\Users\Usuario\Documents\AI\neural_network\cnn\src\training_data\cats_split.npy",
-    split_path_x2=r"C:\Users\Usuario\Documents\AI\neural_network\cnn\src\training_data\dogs_split.npy",
-    undersample_path=r"C:\Users\Usuario\Documents\AI\neural_network\cnn\src\training_data\undersample.npy",
+    split_path_x1=r"...\src\training_data\cats_split.npy",
+    split_path_x2=r"...\src\training_data\dogs_split.npy",
+    undersample_path=r...\src\training_data\undersample.npy",
     flags=True
 )
 
